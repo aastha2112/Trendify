@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New In Clothing</title>
+    <link rel="stylesheet" href="./Styles/nav.css" />
+    <link rel="stylesheet" href="./Styles/footer.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./Styles/clothing.css" />
+  </head>
+  <body>
+    <header>
+      <div class="navBar"></div>
+    </header>
+    <main>
+      <div class="headingAndSort">
+        <h2>Men's Clothing</h2>
+        <select id="sortByPrice">
+          <option value="">Sort by Price</option>
+          <option value="htl">High to Low</option>
+          <option value="lth">Low to High</option>
+        </select>
+      </div>
+      <div class="menClothing"></div>
+    </main>
+    <footer id="footer"></footer>
+  </body>
+  <script src="./Scripts/nav.js"></script>
+  <script src="./Scripts/footer.js"></script>
+  <script type="module" src="./Scripts/clothing.js">
+    async function mensPage() {
+      try {
+        console.log("function chala html se");
+        let data = await getData(productUrl).then((arr) => arr);
+        let menClothes = data.filter((el) => el.category === "Men's Clothing");
+        displayDataInCard(menClothes, menClothing);
+      } catch (error) {
+        console.log(error, "mens problem");
+      }
+    }
+
+    mensPage();
+  </script>
+</html>

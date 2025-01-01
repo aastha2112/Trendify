@@ -1,0 +1,205 @@
+.discountBanner {
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/Trendify/Assets/heroBanner.webp");
+
+  color: white;
+}
+main {
+  margin: 0 0rem;
+}
+
+.discountBanner > button {
+  margin-top: 12rem;
+  margin-left: 5rem;
+  font-size: 5rem;
+}
+#banner2,
+#banner3 {
+  display: flex;
+  margin-top: 4rem;
+
+  justify-content: center;
+  gap: 3rem;
+}
+
+.womenDiv,
+.kidsDiv {
+  background-image: url("/Trendify/Assets/legacyTrench.webp");
+  background-size: cover;
+  width: 30rem;
+  height: 40rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: flex-start;
+  font-size: 2rem;
+  color: white;
+}
+.kidsDiv {
+  background-image: url("/Trendify/Assets/kidsBanner.avif");
+  /* color: black; */
+}
+
+.menDiv,
+.homeDiv {
+  background-image: url("/Trendify/Assets/keepItCasual.avif");
+  background-size: cover;
+  height: 40rem;
+  width: 30rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 2rem;
+  color: white;
+}
+.homeDiv {
+  background-image: url("/Trendify/Assets/homeBanner.avif");
+  color: white;
+}
+/* heading new arrival */
+
+.newArriveHeading,
+.trendingNowHeading {
+  margin-top: 3rem;
+  margin-left: 6rem;
+}
+
+/* new arrivals card container */
+
+#newArrivalsCardCont {
+  width: 90%;
+  justify-self: center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+.card > img {
+  height: 25rem;
+  width: 100%;
+}
+.card > h3 {
+  padding-left: 1rem;
+  margin-bottom: 0;
+}
+
+.cardContDiv {
+  display: flex;
+  padding: 0 1rem;
+  gap: 2rem;
+  align-items: center;
+}
+.cardContDiv > h4 {
+  padding: 0 2rem;
+  border-left: 1px solid gray;
+}
+
+#banner4 {
+  /* background-image: url("/Trendify/Assets/banner4accessory.avif"); */
+  background-image: linear-gradient(to right, #ede6e9, #61554f);
+  background-size: cover;
+  height: 15rem;
+  width: 100%;
+
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+}
+#banner4 > h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  align-self: center;
+  color: white;
+}
+#banner4 > h2 {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+}
+
+#banner4 > button {
+  margin-right: 5rem;
+
+  justify-self: center;
+  align-self: flex-end;
+}
+#accessoryCardCont {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+#accessoryCardCont > div {
+  height: 10rem;
+}
+
+#accessoryCardCont > div:nth-child(2) {
+  background-image: url("/Trendify/Assets/hairAccess.webp");
+  background-size: cover;
+  background-position: center;
+  height: 40rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  background-size: 100%;
+}
+#accessoryCardCont > div:nth-child(3) {
+  background-image: url(/Trendify/Assets/shopBags.webp);
+  background-size: cover;
+  background-position: center;
+  height: 40rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  background-size: 100%;
+}
+#accessoryCardCont > div:nth-child(1) {
+  background-image: url(/Trendify/Assets/shopJewel.webp);
+  background-size: cover;
+  background-position: center;
+  height: 40rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  background-size: 100%;
+}
+#accessoryCardCont > div:nth-child(4) {
+  background-image: url(/Trendify/Assets/shopScarfs.avif);
+  background-size: cover;
+  background-position: center;
+  height: 40rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  background-size: 100%;
+}
+
+#accessoryCardCont > div:hover {
+  overflow: hidden;
+  background-size: 120%;
+  transition: background-size 1s ease-in;
+}
+#trendingNowCardCont {
+  display: grid;
+  margin-top: 3rem;
+
+  grid-template-columns: repeat(4, 1fr);
+}
