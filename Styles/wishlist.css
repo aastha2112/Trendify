@@ -1,0 +1,25 @@
+#wishlistCont {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 1rem 10rem;
+}
+
+.card > img {
+  height: 30rem;
+  width: 100%;
+}
+.card > h3 {
+  padding-left: 1rem;
+  margin-bottom: 0;
+}
+.cardContDiv {
+  display: flex;
+  padding: 0 1rem;
+  gap: 2rem;
+  align-items: center;
+}
+.cardContDiv > h4 {
+  padding: 0 2rem;
+  border-left: 1px solid gray;
+}

@@ -85,6 +85,9 @@ main {
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
 }
+.card {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
 .card > img {
   height: 25rem;
   width: 100%;
@@ -103,6 +106,10 @@ main {
 .cardContDiv > h4 {
   padding: 0 2rem;
   border-left: 1px solid gray;
+}
+
+.wishlistBtn:hover {
+  color: red;
 }
 
 #banner4 {
@@ -200,6 +207,7 @@ main {
 #trendingNowCardCont {
   display: grid;
   margin-top: 3rem;
-
+  gap: 2rem;
+  padding: 2rem;
   grid-template-columns: repeat(4, 1fr);
 }

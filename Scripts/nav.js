@@ -18,17 +18,32 @@ function createNavbar() {
   let loginForm = document.createElement("a");
   loginForm.href = "login.html";
   loginForm.classList.add("loginForm");
-
+  //add login functionality
   loginForm.textContent = "Login";
 
   let searchBtn = document.createElement("button");
   searchBtn.classList.add("fa", "fa-search");
+  searchBtn.addEventListener("click", () => {
+    //add search functionality
+  });
+
+  let wishlistBtn = document.createElement("button");
+  wishlistBtn.classList.add("fa-solid", "fa-heart");
+
+  wishlistBtn.addEventListener("click", () => {
+    // add wishlist functionality
+    window.location.href = "wishlist.html";
+  });
 
   let shoppingBag = document.createElement("button");
   shoppingBag.classList.add("fa-solid", "fa-bag-shopping");
+  shoppingBag.addEventListener("click", () => {
+    //add shopping bag functionality
+    window.location.href = "shoppingBag.html";
+  });
 
   //appending
-  loginAndsearch.append(loginForm, searchBtn, shoppingBag);
+  loginAndsearch.append(loginForm, searchBtn, wishlistBtn, shoppingBag);
   navBar.append(logo, categories, loginAndsearch);
 
   // categories

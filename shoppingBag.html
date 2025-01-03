@@ -3,33 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New In Clothing</title>
+    <title>Wishlist</title>
     <link rel="stylesheet" href="./Styles/nav.css" />
     <link rel="stylesheet" href="./Styles/footer.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./Styles/clothing.css" />
+    <link rel="stylesheet" href="./Styles/cart.css" />
   </head>
   <body>
     <header>
       <div class="navBar"></div>
     </header>
     <main>
-      <div class="headingAndSort">
-        <h2>Men's Clothing</h2>
-        <select id="sortByPrice">
-          <option value="">Sort by Price</option>
-          <option value="htl">High to Low</option>
-          <option value="lth">Low to High</option>
-        </select>
+      <div class="id">
+        <h3>Total Cart Value :</h3>
+        <button>Proceed to Checkout</button>
       </div>
-      <div class="menClothing"></div>
+      <div id="shoppingBag"></div>
     </main>
     <footer id="footer"></footer>
   </body>
   <script src="./Scripts/nav.js" type="module"></script>
   <script src="./Scripts/footer.js"></script>
-  <script type="module" src="./Scripts/clothing.js"></script>
+  <script type="module" src="./Scripts/cart.js"></script>
 </html>

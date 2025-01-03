@@ -48,14 +48,24 @@ body {
   padding: 0.5rem;
 }
 .loginAndsearchDiv > button:hover {
-  background-color: lightgray;
+  color: gray;
 }
 .loginForm {
   font-size: 1.2rem;
   text-decoration: none;
   color: black;
 }
-
+.nameAndWishlistDiv {
+  display: flex;
+  width: 90%;
+  justify-self: center;
+  justify-content: space-between;
+}
+.nameAndWishlistDiv > button {
+  border: none;
+  background-color: white;
+  font-size: 1.5rem;
+}
 .modal {
   display: none;
   position: absolute;
