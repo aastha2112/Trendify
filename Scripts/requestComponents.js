@@ -9,8 +9,9 @@ export const getData = async (url) => {
     console.log("error in get request", error);
   }
 };
-
-export const displayDataInCard = (arr, cont, displayAddCartBtn) => {
+let closeModal = document.getElementById("closeModal");
+console.log(closeModal);
+export const displayDataInCard = (arr, cont, displayAddCartBtn, quantity) => {
   arr.map((el) => {
     let card = document.createElement("div");
     card.classList.add("card");
@@ -70,21 +71,112 @@ export const displayDataInCard = (arr, cont, displayAddCartBtn) => {
         let productAlreadyInCart = user[0].cart.filter(
           (elm) => elm.name === el.name
         );
-        if (productAlreadyInCart.find((elm) => elm == elm)) {
+        if (productAlreadyInCart.find((el) => el == elm)) {
           return;
         } else {
+          user[0].cart.map((prod) => {
+            console.log(prod);
+            prod.stock = 1;
+            console.log("product stock updated");
+          });
           const updatedCart = [el, ...user[0].cart];
 
           patchData(`${userUrl}/${user[0].id}`, { cart: updatedCart });
         }
       }
     });
+    let quantityCounterDiv = document.createElement("div");
+    quantityCounterDiv.classList.add("quantityCounterDiv");
 
-    cardContDiv.append(productPrice, discount);
+    let quantityCount = document.createElement("h3");
+    quantityCount.id = "quantityCount";
+
+    quantityCount.textContent = 1;
+    let increment = document.createElement("button");
+    increment.textContent = "+";
+    let decrement = document.createElement("button");
+    decrement.textContent = "-";
+
+    increment.addEventListener("click", async () => {
+      quantityCount.textContent++;
+      let userLoginInfo = JSON.parse(localStorage.getItem("userLoginTrendify"));
+
+      let users = await getData(userUrl).then((users) => users);
+      let user = users.filter((user) => user.email == userLoginInfo.email)[0];
+
+      let cartItem = user.cart.find((item) => item.name === el.name);
+      console.log(cartItem);
+      if (cartItem) {
+        if (parseInt(cartItem.stock) > quantityCount.textContent) {
+          cartItem.stock = quantityCount.textContent;
+
+          await patchData(`${userUrl}/${user.id}`, { cart: user.cart });
+        } else {
+          quantityCount.textContent = cartItem.stock;
+          return;
+        }
+      }
+    });
+
+    decrement.addEventListener("click", async () => {
+      if (quantityCount.textContent == 1) {
+        return;
+      } else {
+        quantityCount.textContent--;
+        let userLoginInfo = JSON.parse(
+          localStorage.getItem("userLoginTrendify")
+        );
+        if (el.stock > quantityCount.textContent) {
+          let users = await getData(userUrl).then((users) => users);
+
+          let user = users.filter(
+            (user) => user.email == userLoginInfo.email
+          )[0];
+          el.stock = quantityCount.textContent;
+          const updatedStock = quantityCount.textContent;
+          patchData(`${userUrl}/${user.id}`, { stock: updatedStock });
+          console.log(el, "Patched decremented");
+        }
+      }
+    });
+
+    card.addEventListener("click", () => openModal(el));
+
+    closeModal.addEventListener("click", () => {
+      document.getElementById("productModal").style.display = "none";
+    });
+    window.addEventListener("click", (e) => {
+      const productModal = document.getElementById("productModal");
+      if (e.target === productModal) {
+        productModal.style.display = "none";
+      }
+    });
+    quantityCounterDiv.append(decrement, quantityCount, increment);
+    quantityCounterDiv.style.display = quantity ? "flex" : "none";
+
+    cardContDiv.append(productPrice, discount, quantityCounterDiv);
     card.append(productImg, nameAndWishlistDiv, cardContDiv, addTocartBtn);
     cont.append(card);
   });
 };
+//card modal
+
+function openModal(obj) {
+  const productModal = document.getElementById("productModal");
+  document.getElementById("modalImage").src = obj.imageUrl;
+  document.getElementById("modalName").textContent = obj.name;
+  document.getElementById("modalPrice").textContent = `$${obj.price}`;
+  document.getElementById("modalDescription").textContent = obj.description;
+  const moreDetailsContainer = document.getElementById("modalMoreDetails");
+  moreDetailsContainer.innerHTML = `
+  <h4>Additional Details</h4>
+  <p>Category: ${obj.category}</p>
+  <p>Rating: ${obj.rating}</p>
+  <p>Stock: ${obj.stock}</p>
+`;
+  console.log(productModal);
+  productModal.style.display = "block";
+}
 
 //url without id
 

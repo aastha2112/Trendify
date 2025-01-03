@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wishlist</title>
+    <title>Shopping Bag</title>
     <link rel="stylesheet" href="./Styles/nav.css" />
     <link rel="stylesheet" href="./Styles/footer.css" />
     <link
@@ -17,9 +17,22 @@
       <div class="navBar"></div>
     </header>
     <main>
-      <div class="id">
-        <h3>Total Cart Value :</h3>
-        <button>Proceed to Checkout</button>
+      <!-- card modal -->
+
+      <div id="productModal" class="cardModal">
+        <div class="modal-content">
+          <span id="closeModal" class="close">&times;</span>
+          <img id="modalImage" src="" alt="" />
+          <h3 id="modalName"></h3>
+          <p id="modalPrice"></p>
+          <p id="modalDescription"></p>
+          <div id="modalMoreDetails"></div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="cartValueDiv">
+        <h3 class="cartValueText">Total Cart Value :</h3>
+        <button id="checkout">Proceed to Checkout</button>
       </div>
       <div id="shoppingBag"></div>
     </main>

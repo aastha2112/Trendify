@@ -17,6 +17,20 @@
       <div class="navBar"></div>
     </header>
     <main>
+      <!--  -->
+      <!-- card modal -->
+
+      <div id="productModal" class="cardModal">
+        <div class="modal-content">
+          <span id="closeModal" class="close">&times;</span>
+          <img id="modalImage" src="" alt="" />
+          <h3 id="modalName"></h3>
+          <p id="modalPrice"></p>
+          <p id="modalDescription"></p>
+          <div id="modalMoreDetails"></div>
+        </div>
+      </div>
+      <!--  -->
       <div class="headingAndSort">
         <h2>Home Decor</h2>
         <select id="sortByPrice">
@@ -29,7 +43,7 @@
     </main>
     <footer id="footer"></footer>
   </body>
-  <script src="./Scripts/nav.js"></script>
+  <script src="./Scripts/nav.js" type="module"></script>
   <script src="./Scripts/footer.js"></script>
   <script type="module" src="./Scripts/home.js"></script>
 </html>

@@ -4,7 +4,41 @@
   gap: 2rem;
   padding: 1rem 10rem;
 }
+.quantityCounterDiv {
+  height: 1rem;
+  display: flex;
+  width: 20%;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid lightgray;
+  padding: 0.7rem;
+  border-radius: 1rem;
+}
 
+.afterCheckout {
+  font-size: 3rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  display: flex;
+  width: 20%;
+  margin-left: 10rem;
+}
+.quantityCounterDiv > button {
+  border: none;
+  background-color: white;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.cartValueDiv {
+  padding: 1rem 10rem;
+  display: flex;
+  justify-content: space-around;
+}
+.cartValueDiv > button {
+  border-radius: 1rem;
+  border: none;
+  background-color: yellow;
+  padding: 0 1rem;
+}
 .card > img {
   height: 30rem;
   width: 100%;
@@ -22,4 +56,35 @@
 .cardContDiv > h4 {
   padding: 0 2rem;
   border-left: 1px solid gray;
+}
+
+/* product card */
+.cardModal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  position: relative;
+  margin: 10% auto;
+  background: white;
+  width: 40rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
 }

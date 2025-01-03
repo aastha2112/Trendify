@@ -15,6 +15,16 @@
   <body>
     <header>
       <div class="navBar"></div>
+      <div id="searchModal" class="modal">
+        <div class="modal-content">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+          />
+          <ul id="searchResults"></ul>
+        </div>
+      </div>
     </header>
     <main>
       <!-- banner 1 -->
@@ -22,7 +32,18 @@
         <!-- add functionality -->
         <button>SHOP NOW</button>
       </div>
+      <!-- card modal -->
 
+      <div id="productModal" class="cardModal">
+        <div class="modal-content">
+          <span id="closeModal" class="close">&times;</span>
+          <img id="modalImage" src="" alt="" />
+          <h3 id="modalName"></h3>
+          <p id="modalPrice"></p>
+          <p id="modalDescription"></p>
+          <div id="modalMoreDetails"></div>
+        </div>
+      </div>
       <!-- banner 2 -->
       <div id="banner2">
         <div class="womenDiv">

@@ -15,6 +15,55 @@ body {
   height: 5rem;
 }
 
+/* search modal */
+#searchModal {
+  display: none;
+  position: absolute;
+  top: 7%;
+  left: 78%;
+  z-index: 1000;
+  /* background-color: rgba(0, 0, 0, 0.8); */
+  width: 25rem;
+  height: 30rem;
+  border-radius: 0.5rem;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  height: 100%;
+  overflow-y: auto;
+}
+
+#searchInput {
+  width: 90%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+#searchResults {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#searchResults li {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+#searchResults li:hover {
+  background-color: #f0f0f0;
+}
+/* search modal */
+
 .categoryDiv {
   display: flex;
   gap: 1rem;
@@ -88,4 +137,21 @@ body {
 
 .modal a:hover {
   text-decoration: underline;
+}
+
+/* search modal */
+.searchModal {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  color: black;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  width: 200px;
+}
+.searchModalContainer {
+  position: relative;
 }

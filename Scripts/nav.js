@@ -1,6 +1,10 @@
-let navBar = document.querySelector(".navBar");
-let navModalCont = document.querySelector(".navModalCont");
+import { getData } from "./requestComponents.js";
+import { productUrl } from "./urls.js";
 
+let navBar = document.querySelector(".navBar");
+let searchModal = document.getElementById("searchModal");
+let searchInput = document.getElementById("searchInput");
+let searchResults = document.getElementById("searchResults");
 function createNavbar() {
   let logo = document.createElement("img");
   logo.classList.add("logo");
@@ -25,8 +29,43 @@ function createNavbar() {
   searchBtn.classList.add("fa", "fa-search");
   searchBtn.addEventListener("click", () => {
     //add search functionality
+    searchModal.style.display = "block";
+    searchInput.focus();
   });
+  document.addEventListener("click", (e) => {
+    if (!searchModal.contains(e.target) && e.target !== searchBtn) {
+      searchModal.style.display = "none";
+    }
+  });
+  //
+  async function searchProducts(query) {
+    const productNames = await getData(productUrl).then((data) => data);
+    const filteredProducts = productNames.filter((product) =>
+      product.name.toLowerCase().includes(query.toLowerCase())
+    );
 
+    searchResults.innerHTML = "";
+
+    filteredProducts.forEach((product) => {
+      const li = document.createElement("li");
+      li.textContent = product.name;
+      li.addEventListener("click", () => {
+        console.log("show product");
+      });
+      searchResults.appendChild(li);
+    });
+
+    console.log(searchInput);
+    searchInput.addEventListener("input", (e) => {
+      const query = e.target.value;
+      if (query) {
+        searchProducts(query);
+      } else {
+        searchResults.innerHTML = "";
+      }
+    });
+  }
+  //
   let wishlistBtn = document.createElement("button");
   wishlistBtn.classList.add("fa-solid", "fa-heart");
 
@@ -135,29 +174,3 @@ function createNavbar() {
 }
 
 createNavbar();
-
-function openModal() {
-  let navModal = document.createElement("div");
-  navModal.classList.add("navModal");
-
-  let allNew = document.createElement("a");
-  let trending = document.createElement("div");
-  let imgLinkCont = document.createElement("div");
-
-  allNew.textContent = "All New";
-
-  let trendingHeading = document.createElement("h3");
-  trendingHeading.textContent = "Trending";
-  let winter = document.createElement("a");
-  let boots = document.createElement("a");
-  let hairAcs = document.createElement("a");
-
-  winter.textContent = "Winter Essentials";
-  boots.textContent = "Leather Boots";
-  hairAcs.textContent = "Hair Accessories";
-
-  trending.append(trendingHeading, winter, boots, hairAcs);
-
-  navModal.append(allNew, trending, imgLinkCont);
-  navModalCont.append(navModal);
-}
