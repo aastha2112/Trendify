@@ -54,17 +54,18 @@ function createNavbar() {
       });
       searchResults.appendChild(li);
     });
-
-    console.log(searchInput);
-    searchInput.addEventListener("input", (e) => {
-      const query = e.target.value;
-      if (query) {
-        searchProducts(query);
-      } else {
-        searchResults.innerHTML = "";
-      }
-    });
   }
+  console.log(searchInput);
+  searchInput.addEventListener("input", (e) => {
+    console.log(e);
+    const query = e.target.value;
+    if (query) {
+      searchProducts(query);
+    } else {
+      searchResults.innerHTML = "";
+    }
+  });
+
   //
   let wishlistBtn = document.createElement("button");
   wishlistBtn.classList.add("fa-solid", "fa-heart");

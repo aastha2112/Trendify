@@ -4,7 +4,6 @@ import { displayDataInCard, getData } from "./requestComponents.js";
 import { productUrl } from "./urls.js";
 
 let newArrivalsCardCont = document.getElementById("newArrivalsCardCont");
-let accessoryCardCont = document.getElementById("accessoryCardCont");
 let trendingNowCardCont = document.getElementById("trendingNowCardCont");
 
 async function homeCards() {
@@ -33,3 +32,20 @@ async function homeCards() {
 window.onload = () => {
   homeCards();
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+  const images = document.querySelectorAll(".banner-image");
+  let currentIndex = 0;
+
+  function showNextImage() {
+    images[currentIndex].classList.remove("active");
+
+    currentIndex = (currentIndex + 1) % images.length;
+
+    images[currentIndex].classList.add("active");
+  }
+
+  images[currentIndex].classList.add("active");
+
+  setInterval(showNextImage, 2000);
+});
