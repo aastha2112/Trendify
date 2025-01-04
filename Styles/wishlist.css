@@ -4,7 +4,9 @@
   gap: 2rem;
   padding: 1rem 10rem;
 }
-
+.card {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
 .card > img {
   height: 30rem;
   width: 100%;
@@ -23,7 +25,10 @@
   padding: 0 2rem;
   border-left: 1px solid gray;
 }
-
+.addBtnClicked {
+  transform: scale(1.2);
+  color: red;
+}
 /* product card */
 .cardModal {
   display: none;
@@ -36,7 +41,33 @@
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.8);
 }
+#modalImage {
+  height: 30rem;
+}
+.addToCartBtn {
+  color: white;
+  justify-self: center;
+  justify-content: center;
 
+  align-items: center;
+  border-radius: 1rem;
+  border: none;
+  font-size: 1rem;
+  width: 50%;
+  height: 1.5rem;
+  font-weight: 600;
+  background-color: #3380ef;
+  margin-bottom: 1.5rem;
+}
+.addToCartBtn:hover {
+  background-color: #176ce2;
+
+  color: white;
+}
+
+.wishlistBtn:hover {
+  color: red;
+}
 .modal-content {
   position: relative;
   margin: 10% auto;

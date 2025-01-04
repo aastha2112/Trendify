@@ -25,18 +25,18 @@ async function mensPage() {
   try {
     let data = await getData(productUrl).then((arr) => arr);
     let menClothes = data.filter((el) => el.category === "Men's Clothing");
-    displayDataInCard(menClothes, menClothing);
+    displayDataInCard(menClothes, menClothing, true);
 
     sortByPrice.addEventListener("change", () => {
       menClothing.innerHTML = "";
       if (sortByPrice.value == "htl") {
         menClothes.sort((a, b) => b.price - a.price);
 
-        displayDataInCard(menClothes, menClothing);
+        displayDataInCard(menClothes, menClothing, true);
       } else if (sortByPrice.value == "lth") {
         menClothes.sort((a, b) => a.price - b.price);
 
-        displayDataInCard(menClothes, menClothing);
+        displayDataInCard(menClothes, menClothing, true);
       }
     });
   } catch (error) {
@@ -48,18 +48,18 @@ async function womenPage() {
   try {
     let data = await getData(productUrl).then((arr) => arr);
     let womenClothes = data.filter((el) => el.category === "Women's Clothing");
-    displayDataInCard(womenClothes, womenClothing);
+    displayDataInCard(womenClothes, womenClothing, true);
 
     sortByPrice.addEventListener("change", () => {
       womenClothing.innerHTML = "";
       if (sortByPrice.value == "htl") {
         womenClothes.sort((a, b) => b.price - a.price);
 
-        displayDataInCard(womenClothes, womenClothing);
+        displayDataInCard(womenClothes, womenClothing, true);
       } else if (sortByPrice.value == "lth") {
         womenClothes.sort((a, b) => a.price - b.price);
 
-        displayDataInCard(womenClothes, womenClothing);
+        displayDataInCard(womenClothes, womenClothing, true);
       }
     });
   } catch (error) {
@@ -72,18 +72,18 @@ async function kidsPage() {
     console.log("function chala");
     let data = await getData(productUrl).then((arr) => arr);
     let kidsClothes = data.filter((el) => el.category === "Kids' Wear");
-    displayDataInCard(kidsClothes, kidsClothing);
+    displayDataInCard(kidsClothes, kidsClothing, true);
 
     sortByPrice.addEventListener("change", () => {
       kidsClothing.innerHTML = "";
       if (sortByPrice.value == "htl") {
         kidsClothes.sort((a, b) => b.price - a.price);
 
-        displayDataInCard(kidsClothes, kidsClothing);
+        displayDataInCard(kidsClothes, kidsClothing, true);
       } else if (sortByPrice.value == "lth") {
         kidsClothes.sort((a, b) => a.price - b.price);
 
-        displayDataInCard(kidsClothes, kidsClothing);
+        displayDataInCard(kidsClothes, kidsClothing, true);
       }
     });
   } catch (error) {

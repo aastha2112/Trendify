@@ -10,7 +10,6 @@ function footer() {
   let footerLogoAndCopyrtDiv = document.createElement("div");
   footerLogoAndCopyrtDiv.classList.add("footerLogoAndCopyrtDiv");
 
-  // 4 divs of footerLinksDiv along with items
   //   div 1.1
   let customerCareDiv = document.createElement("div");
   customerCareDiv.classList.add("customerCareDiv");
@@ -19,16 +18,16 @@ function footer() {
   customerCare.textContent = "Customer Care";
 
   let help = document.createElement("a");
-  help.textContent = "Help"; //add src to it
+  help.textContent = "Help";
 
   let faq = document.createElement("a");
-  faq.textContent = "FAQs"; //add src to it
+  faq.textContent = "FAQs";
 
   let returns = document.createElement("a");
-  returns.textContent = "Returns"; //add src to it
+  returns.textContent = "Returns";
 
   let support = document.createElement("a");
-  support.textContent = "Support"; //add src to it
+  support.textContent = "Support";
 
   customerCareDiv.append(customerCare, help, faq, returns, support);
 
@@ -40,13 +39,13 @@ function footer() {
   info.textContent = "Info";
 
   let careers = document.createElement("a");
-  careers.textContent = "Careers"; //add src to it
+  careers.textContent = "Careers";
 
   let tAndC = document.createElement("a");
-  tAndC.textContent = "Terms and Conditions"; //add src to it
+  tAndC.textContent = "Terms and Conditions";
 
   let privacyPolicy = document.createElement("a");
-  privacyPolicy.textContent = "Privacy Policy"; //add src to it
+  privacyPolicy.textContent = "Privacy Policy";
 
   infoDiv.append(info, careers, tAndC, privacyPolicy);
   // div 1.3
@@ -57,22 +56,28 @@ function footer() {
   shop.textContent = "Shop";
 
   let women = document.createElement("a");
-  women.textContent = "Women"; //add src to it
+  women.textContent = "Women";
+  women.href = "womenClothing.html";
 
   let men = document.createElement("a");
-  men.textContent = "Men"; //add src to it
+  men.textContent = "Men";
+  men.href = "mensClothing.html";
 
   let kids = document.createElement("a");
-  kids.textContent = "Kids"; //add src to it
+  kids.textContent = "Kids";
+  kids.href = "kidClothing.html";
 
   let shoes = document.createElement("a");
-  shoes.textContent = "Shoes"; //add src to it
+  shoes.textContent = "Shoes";
+  shoes.href = "shoes.html";
 
   let home = document.createElement("a");
-  home.textContent = "Home"; //add src to it
+  home.textContent = "Home";
+  home.href = "home.html";
 
   let bagsAndAcc = document.createElement("a");
-  bagsAndAcc.textContent = "Bags And Accessories"; //add src to it
+  bagsAndAcc.textContent = "Bags And Accessories";
+  bagsAndAcc.href = "accessory.html";
 
   shopDiv.append(shop, women, men, kids, shoes, home, bagsAndAcc);
   // div 1.4
@@ -128,8 +133,6 @@ function footer() {
   footerLinksDiv.append(shopDiv, customerCareDiv, infoDiv, socialsDiv);
   footerLogoAndCopyrtDiv.append(logo, cprt);
   footerTag.append(footerLinksDiv, footerLogoAndCopyrtDiv);
-
-  console.log(footerTag);
 }
 
 footer();

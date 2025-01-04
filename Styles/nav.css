@@ -135,6 +135,7 @@ body {
 
 .modal a:hover {
   text-decoration: underline;
+  color: red;
 }
 
 /* search modal */

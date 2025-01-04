@@ -27,6 +27,8 @@ async function displayShoppingBag() {
       if (userCart.cart.length == 0) {
         shoppingBag.textContent = "Your Bag is Empty!";
         shoppingBag.classList.add("afterCheckout");
+        shoppingBag.style.display = "flex";
+
         cartValueText.textContent = `Total Cart Value : $ 0`;
       } else {
         let cartValue = userCart.cart.reduce((acc, el) => {
@@ -39,10 +41,13 @@ async function displayShoppingBag() {
       }
 
       checkout.addEventListener("click", async () => {
-        cartValueText.textContent = `Total Cart Value : $ 0`;
+        setTimeout(() => {
+          cartValueText.textContent = `Total Cart Value : $ 0`;
+          shoppingBag.textContent = "Order Placed! Thanks for Shopping.";
+          shoppingBag.classList.add("afterCheckout");
+          shoppingBag.style.display = "flex";
+        }, 2000);
         await patchData(`${userUrl}/${user[0].id}`, { cart: [] });
-        shoppingBag.textContent = "Thanks for Shopping!";
-        shoppingBag.classList.add("afterCheckout");
       });
     }
   } catch (error) {

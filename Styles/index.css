@@ -5,7 +5,6 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  background-image: url("/Trendify/Assets/heroBanner.webp");
 
   color: white;
 }
@@ -93,6 +92,16 @@ main {
   margin-left: 6rem;
 }
 
+.menDiv > button,
+.womenDiv > button,
+.kidsDiv > button,
+.homeDiv > button,
+#banner4 > button {
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+  cursor: pointer;
+}
 /* new arrivals card container */
 
 #newArrivalsCardCont {
@@ -130,7 +139,6 @@ main {
 }
 
 #banner4 {
-  /* background-image: url("/Trendify/Assets/banner4accessory.avif"); */
   background-image: linear-gradient(to right, #ede6e9, #61554f);
   background-size: cover;
   height: 15rem;
@@ -157,9 +165,10 @@ main {
 
 #banner4 > button {
   margin-right: 5rem;
-
+  color: white;
   justify-self: center;
   align-self: flex-end;
+  cursor: pointer;
 }
 #accessoryCardCont {
   margin-top: 3rem;
@@ -171,7 +180,7 @@ main {
   height: 10rem;
 }
 
-#accessoryCardCont > div:nth-child(2) {
+#accessoryCardCont > div:nth-child(1) {
   background-image: url("/Trendify/Assets/hairAccess.webp");
   background-size: cover;
   background-position: center;
@@ -179,6 +188,8 @@ main {
   color: white;
   display: flex;
   justify-content: center;
+  background-repeat: no-repeat;
+
   align-items: end;
   background-size: 100%;
 }
@@ -186,6 +197,8 @@ main {
   background-image: url(/Trendify/Assets/shopBags.webp);
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+
   height: 40rem;
   color: white;
   display: flex;
@@ -193,10 +206,11 @@ main {
   align-items: end;
   background-size: 100%;
 }
-#accessoryCardCont > div:nth-child(1) {
-  background-image: url(/Trendify/Assets/shopJewel.webp);
+#accessoryCardCont > div:nth-child(2) {
+  background-image: url(/Trendify/Assets/dwWatch.webp);
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   height: 40rem;
   color: white;
   display: flex;
@@ -205,10 +219,12 @@ main {
   background-size: 100%;
 }
 #accessoryCardCont > div:nth-child(4) {
-  background-image: url(/Trendify/Assets/shopScarfs.avif);
+  background-image: url(/Trendify/Assets/menScarf.jpeg);
   background-size: cover;
   background-position: center;
   height: 40rem;
+  background-repeat: no-repeat;
+
   color: white;
   display: flex;
   justify-content: center;
@@ -249,6 +265,9 @@ main {
   padding: 1rem;
   border-radius: 0.5rem;
   text-align: center;
+}
+#modalImage {
+  height: 30rem;
 }
 
 .close {

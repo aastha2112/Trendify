@@ -10,7 +10,6 @@ export const getData = async (url) => {
   }
 };
 let closeModal = document.getElementById("closeModal");
-console.log(closeModal);
 export const displayDataInCard = (arr, cont, displayAddCartBtn, quantity) => {
   arr.map((el) => {
     let card = document.createElement("div");
@@ -23,6 +22,9 @@ export const displayDataInCard = (arr, cont, displayAddCartBtn, quantity) => {
 
     let productName = document.createElement("h3");
     productName.textContent = el.name;
+    productName.style.fontSize = "1.3rem";
+    productName.style.color = "black";
+
     let cardContDiv = document.createElement("div");
     cardContDiv.classList.add("cardContDiv");
 
@@ -31,6 +33,7 @@ export const displayDataInCard = (arr, cont, displayAddCartBtn, quantity) => {
     discount.style.color = "gray";
     let productPrice = document.createElement("h2");
     productPrice.textContent = `$ ${el.price}`;
+    productPrice.style.color = "black";
 
     let addToWishlistBtn = document.createElement("button");
     addToWishlistBtn.classList.add("fa-solid", "fa-heart", "wishlistBtn");
@@ -46,6 +49,10 @@ export const displayDataInCard = (arr, cont, displayAddCartBtn, quantity) => {
         let alreadyWislisted = user[0].wishlist.filter(
           (elm) => elm.name === el.name
         );
+        addToWishlistBtn.classList.add("wishBtnClicked");
+        setTimeout(() => {
+          addToWishlistBtn.classList.remove("wishBtnClicked");
+        }, 300);
         if (alreadyWislisted.find((elm) => elm == elm)) {
           return;
         } else {
@@ -58,6 +65,7 @@ export const displayDataInCard = (arr, cont, displayAddCartBtn, quantity) => {
 
     let addTocartBtn = document.createElement("button");
     addTocartBtn.textContent = "Add To Cart!";
+    addTocartBtn.classList.add("addToCartBtn");
     addTocartBtn.style.display = displayAddCartBtn ? "flex" : "none";
     addTocartBtn.addEventListener("click", async () => {
       //add shopping bag functionality
@@ -71,6 +79,10 @@ export const displayDataInCard = (arr, cont, displayAddCartBtn, quantity) => {
         let productAlreadyInCart = user[0].cart.filter(
           (elm) => elm.name === el.name
         );
+        addTocartBtn.classList.add("addBtnClicked");
+        setTimeout(() => {
+          addTocartBtn.classList.remove("addBtnClicked");
+        }, 300);
         if (productAlreadyInCart.find((el) => el == elm)) {
           return;
         } else {
@@ -140,7 +152,7 @@ export const displayDataInCard = (arr, cont, displayAddCartBtn, quantity) => {
       }
     });
 
-    card.addEventListener("click", () => openModal(el));
+    productImg.addEventListener("click", () => openModal(el));
 
     closeModal.addEventListener("click", () => {
       document.getElementById("productModal").style.display = "none";
@@ -156,6 +168,7 @@ export const displayDataInCard = (arr, cont, displayAddCartBtn, quantity) => {
 
     cardContDiv.append(productPrice, discount, quantityCounterDiv);
     card.append(productImg, nameAndWishlistDiv, cardContDiv, addTocartBtn);
+
     cont.append(card);
   });
 };

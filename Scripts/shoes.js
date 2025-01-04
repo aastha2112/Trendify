@@ -8,7 +8,7 @@ async function shoesPage() {
   try {
     let data = await getData(productUrl).then((arr) => arr);
     let shoes = data.filter((el) => el.category === "Shoes");
-    displayDataInCard(shoes, shoesCont);
+    displayDataInCard(shoes, shoesCont, true);
 
     filterByCategory.addEventListener("change", () => {
       shoesCont.innerHTML = "";
@@ -16,12 +16,12 @@ async function shoesPage() {
         let menShoes = shoes.filter((el) => el.name.includes("Men"));
         console.log(menShoes);
         headingText.textContent = "Men's Shoes";
-        displayDataInCard(menShoes, shoesCont);
+        displayDataInCard(menShoes, shoesCont, true);
       } else if (filterByCategory.value == "women") {
         let womenShoes = shoes.filter((el) => el.name.includes("Women"));
         headingText.textContent = "Women's Shoes";
 
-        displayDataInCard(womenShoes, shoesCont);
+        displayDataInCard(womenShoes, shoesCont, true);
       }
     });
   } catch (error) {

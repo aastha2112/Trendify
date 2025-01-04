@@ -20,10 +20,10 @@ async function products() {
       .filter((el) => el.category === "Women's Clothing")
       .splice(0, 3);
 
-    displayDataInCard(newArrivals, newClothingArrivals);
-    displayDataInCard(bag, newClothingArrivals);
-    displayDataInCard(shoe, newClothingArrivals);
-    displayDataInCard(womenCloth, newClothingArrivals);
+    displayDataInCard(newArrivals, newClothingArrivals, true);
+    displayDataInCard(bag, newClothingArrivals, true);
+    displayDataInCard(shoe, newClothingArrivals, true);
+    displayDataInCard(womenCloth, newClothingArrivals, true);
 
     filterByCategory.addEventListener("change", () => {
       newClothingArrivals.innerHTML = "";

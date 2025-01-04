@@ -50,7 +50,36 @@
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.8);
 }
+#modalImage {
+  height: 30rem;
+}
+.wishlistBtn:hover {
+  color: red;
+}
 
+.addToCartBtn {
+  color: white;
+  justify-self: center;
+  justify-content: center;
+
+  align-items: center;
+  border-radius: 1rem;
+  border: none;
+  font-size: 1rem;
+  width: 50%;
+  height: 1.5rem;
+  font-weight: 600;
+  background-color: #3380ef;
+  margin-bottom: 1.5rem;
+}
+.addToCartBtn:hover {
+  background-color: #176ce2;
+
+  color: white;
+}
+.card {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
 .modal-content {
   position: relative;
   margin: 10% auto;
