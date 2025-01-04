@@ -110,6 +110,10 @@ function footer() {
   fb.innerHTML = `<i class="fa-brands fa-facebook"></i>`;
   let insta = document.createElement("button");
   insta.innerHTML = `<i class="fa-brands fa-instagram"></i>`;
+  insta.addEventListener("click", () => {
+    window.location.href = "https://www.instagram.com/7aastha/";
+  });
+
   let pinterest = document.createElement("button");
   pinterest.innerHTML = `<i class="fa-brands fa-pinterest"></i>`;
   let twitter = document.createElement("button");
