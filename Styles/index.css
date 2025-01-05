@@ -12,11 +12,6 @@ main {
   margin: 0 0rem;
 }
 
-.discountBanner > button {
-  margin-top: 12rem;
-  margin-left: 5rem;
-  font-size: 5rem;
-}
 #banner2,
 #banner3 {
   display: flex;
@@ -61,7 +56,6 @@ main {
 }
 .kidsDiv {
   background-image: url("/Trendify/Assets/kidsBanner.avif");
-  /* color: black; */
 }
 
 .menDiv,
