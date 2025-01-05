@@ -24,10 +24,10 @@
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   grid-column: span 3;
   justify-self: center;
-  color: red;
+  color: black;
   height: 15rem;
   align-items: center;
-  background-color: beige;
+  background-color: #f4f4f4;
   width: 30%;
 }
 .quantityCounterDiv > button {
@@ -114,4 +114,72 @@
   right: 20px;
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+  body,
+  html {
+    width: 100%;
+    overflow-x: hidden;
+    font-size: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  #shoppingBag {
+    display: grid;
+    width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem 1rem;
+  }
+  .quantityCounterDiv {
+    height: 0.8rem;
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 1rem;
+    font-size: 1rem;
+  }
+  .quantityCounterDiv > button {
+    border: none;
+    background-color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .afterCheckout {
+    margin: 3rem;
+    font-size: 2rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    justify-self: center;
+    color: black;
+    font-weight: 700;
+    height: 50rem;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    width: 30%;
+  }
+  .cartValueDiv {
+    display: flex;
+    background-color: #c9e6ec;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+  }
+  .cartValueDiv > button {
+    border-radius: 1rem;
+    border: none;
+    background-color: #14a675;
+    background-color: #38ae96;
+    color: white;
+    font-size: 1.1rem;
+    padding: 0 0.8rem;
+    height: 4rem;
+  }
 }

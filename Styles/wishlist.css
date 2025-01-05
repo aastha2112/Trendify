@@ -4,6 +4,10 @@
   gap: 2rem;
   padding: 1rem 10rem;
 }
+.wishlistHeading {
+  padding-left: 10rem;
+  font-size: 2rem;
+}
 .card {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
@@ -84,4 +88,50 @@
   right: 20px;
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+  body,
+  html {
+    width: 100%;
+    overflow-x: hidden;
+    font-size: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  #wishlistCont {
+    display: grid;
+    width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem 1rem;
+  }
+  #modalImage {
+    height: 50rem;
+  }
+  .modal-content {
+    position: relative;
+    margin: 10% auto;
+    background: white;
+    width: 40rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .wishlistHeading {
+    padding-left: 3rem;
+    font-size: 2rem;
+  }
 }

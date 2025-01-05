@@ -96,3 +96,39 @@
   font-size: 1.5rem;
   cursor: pointer;
 }
+
+@media (min-width: 320px) and (max-width: 425px) {
+  body,
+  html {
+    width: 100%;
+    overflow-x: hidden;
+    font-size: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .accessCont {
+    display: grid;
+    width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem 1rem;
+  }
+  .headingAndSort {
+    padding: 2rem 2rem;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #sortByPrice {
+    width: 30%;
+    height: 2rem;
+    font-size: 1rem;
+  }
+}

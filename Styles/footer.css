@@ -131,14 +131,11 @@ button:hover {
   #footer {
     margin-top: 2rem;
     height: 20rem;
-    padding: 0 1rem;
     background-color: #f4f4f4;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
   }
   .footerLinksDiv {
-    height: 25rem;
     display: grid;
     padding: 0 2rem;
     justify-content: space-evenly;
@@ -148,7 +145,6 @@ button:hover {
     display: flex;
     color: black;
     flex-direction: column;
-    height: 20rem;
     padding: 1rem;
     gap: 0.5rem;
   }
