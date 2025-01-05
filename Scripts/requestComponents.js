@@ -87,9 +87,7 @@ export const displayDataInCard = (arr, cont, displayAddCartBtn, quantity) => {
           return;
         } else {
           user[0].cart.map((prod) => {
-            console.log(prod);
             prod.stock = 1;
-            console.log("product stock updated");
           });
           const updatedCart = [el, ...user[0].cart];
 
@@ -117,7 +115,6 @@ export const displayDataInCard = (arr, cont, displayAddCartBtn, quantity) => {
       let user = users.filter((user) => user.email == userLoginInfo.email)[0];
 
       let cartItem = user.cart.find((item) => item.name === el.name);
-      console.log(cartItem);
       if (cartItem) {
         if (parseInt(cartItem.stock) > quantityCount.textContent) {
           cartItem.stock = quantityCount.textContent;
@@ -147,7 +144,6 @@ export const displayDataInCard = (arr, cont, displayAddCartBtn, quantity) => {
           el.stock = quantityCount.textContent;
           const updatedStock = quantityCount.textContent;
           patchData(`${userUrl}/${user.id}`, { stock: updatedStock });
-          console.log(el, "Patched decremented");
         }
       }
     });
@@ -187,7 +183,6 @@ function openModal(obj) {
   <p>Rating: ${obj.rating}</p>
   <p>Stock: ${obj.stock}</p>
 `;
-  console.log(productModal);
   productModal.style.display = "block";
 }
 

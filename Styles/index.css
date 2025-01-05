@@ -297,3 +297,11 @@ main {
 .banner-image.active {
   opacity: 1;
 }
+
+.wishlistBtn {
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+.wishBtnClicked {
+  transform: scale(1.1);
+  color: red;
+}

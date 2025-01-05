@@ -55,9 +55,7 @@ function createNavbar() {
       searchResults.appendChild(li);
     });
   }
-  console.log(searchInput);
   searchInput.addEventListener("input", (e) => {
-    console.log(e);
     const query = e.target.value;
     if (query) {
       searchProducts(query);
@@ -71,14 +69,13 @@ function createNavbar() {
   wishlistBtn.classList.add("fa-solid", "fa-heart");
 
   wishlistBtn.addEventListener("click", () => {
-    // add wishlist functionality
     window.location.href = "wishlist.html";
   });
 
   let shoppingBag = document.createElement("button");
   shoppingBag.classList.add("fa-solid", "fa-bag-shopping");
   shoppingBag.addEventListener("click", () => {
-    //add shopping bag functionality
+    //added shopping bag functionality
     window.location.href = "shoppingBag.html";
   });
 

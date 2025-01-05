@@ -500,11 +500,11 @@
       <div id="banner2">
         <div class="womenDiv">
           <h1>Legacy Trench</h1>
-          <button>Explore more</button>
+          <button class="exploreBtn">Explore more</button>
         </div>
         <div class="menDiv">
           <h1>Keeping It Casual</h1>
-          <button>Explore more</button>
+          <button class="exploreBtn">Explore more</button>
         </div>
       </div>
       <h2 class="newArriveHeading">New Arrivals</h2>
@@ -515,18 +515,18 @@
       <div id="banner3">
         <div class="kidsDiv">
           <h1>Kid's New Arrivals</h1>
-          <button>Explore more</button>
+          <button class="exploreBtn">Explore more</button>
         </div>
         <div class="homeDiv">
           <h1>Level Up your Space</h1>
-          <button>Explore more</button>
+          <button class="exploreBtn">Explore more</button>
         </div>
       </div>
       <!-- banner 4 accessories -->
       <div id="banner4">
         <h1>Season of Style</h1>
         <h2>Breathtaking gifts for your loved ones</h2>
-        <button>Explore Accessories</button>
+        <button class="exploreBtn">Explore Accessories</button>
       </div>
       <!-- accessories cards -->
       <div id="accessoryCardCont">
@@ -553,4 +553,19 @@
   <script src="./Scripts/nav.js" type="module"></script>
   <script src="./Scripts/index.js" type="module"></script>
   <script src="./Scripts/footer.js"></script>
+  <script>
+    let exploreBtn = Array.from(document.querySelectorAll(".exploreBtn"));
+    exploreBtn[0].addEventListener("click", () => {
+      window.location.href = "womenClothing.html";
+    });
+    exploreBtn[1].addEventListener("click", () => {
+      window.location.href = "mensClothing.html";
+    });
+    exploreBtn[2].addEventListener("click", () => {
+      window.location.href = "kidClothing.html";
+    });
+    exploreBtn[3].addEventListener("click", () => {
+      window.location.href = "home.html";
+    });
+  </script>
 </html>

@@ -98,7 +98,13 @@
   font-size: 1.5rem;
   cursor: pointer;
 }
-
+.wishlistBtn {
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+.wishBtnClicked {
+  transform: scale(1.1);
+  color: red;
+}
 @media (min-width: 320px) and (max-width: 425px) {
   body,
   html {

@@ -34,15 +34,15 @@ async function products() {
             el.category === "Women's Clothing" ||
             el.category === "Kids' Wear"
         );
-        displayDataInCard(inClothing, newClothingArrivals);
+        displayDataInCard(inClothing, newClothingArrivals, true);
       } else if (filterByCategory.value == "inShoes") {
         let inShoes = data.filter((el) => el.category === "Shoes");
-        displayDataInCard(inShoes, newClothingArrivals);
+        displayDataInCard(inShoes, newClothingArrivals, true);
       } else if (filterByCategory.value == "inAccessories") {
         let inAccessories = data.filter(
           (el) => el.category === "Bags and Accessories"
         );
-        displayDataInCard(inAccessories, newClothingArrivals);
+        displayDataInCard(inAccessories, newClothingArrivals, true);
       }
     });
   } catch (error) {

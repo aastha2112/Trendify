@@ -79,11 +79,17 @@
 .wishlistBtn:hover {
   color: red;
 }
+.wishlistBtn {
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+.wishBtnClicked {
+  transform: scale(1.1);
+  color: red;
+}
 .modal-content {
   position: relative;
   margin: 10% auto;
   background: white;
-  width: 40rem;
   padding: 1rem;
   border-radius: 0.5rem;
   text-align: center;
