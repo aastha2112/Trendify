@@ -18,7 +18,7 @@ async function displayShoppingBag() {
     } else {
       let users = await getData(userUrl).then((users) => users);
       let user = users.filter((user) => user.email == userLoginInfo.email);
-      displayDataInCard(user[0].cart, shoppingBag, false, true);
+      displayDataInCard(user[0].cart, shoppingBag, false, true, true);
 
       let userCart = await getData(`${userUrl}/${user[0].id}`).then(
         (users) => users
@@ -41,13 +41,14 @@ async function displayShoppingBag() {
       }
 
       checkout.addEventListener("click", async () => {
-        setTimeout(() => {
-          cartValueText.textContent = `Total Cart Value : $ 0`;
-          shoppingBag.textContent = "Order Placed! Thanks for Shopping.";
-          shoppingBag.classList.add("afterCheckout");
-          shoppingBag.style.display = "flex";
-        }, 2000);
-        await patchData(`${userUrl}/${user[0].id}`, { cart: [] });
+        if (userCart.cart.length == 0) return;
+        else {
+          setTimeout(() => {
+            window.location.href = "payment.html";
+            shoppingBag.classList.add("afterCheckout");
+            shoppingBag.style.display = "flex";
+          }, 2000);
+        }
       });
     }
   } catch (error) {

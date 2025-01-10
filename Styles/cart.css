@@ -4,6 +4,11 @@
   gap: 2rem;
   padding: 1rem 10rem;
 }
+.removeBtn {
+  font-size: 1.3rem;
+  border: none;
+  background-color: white;
+}
 
 .quantityCounterDiv {
   height: 1rem;
@@ -64,8 +69,9 @@
 }
 .cardContDiv {
   display: flex;
+  justify-content: space-between;
   padding: 0 1rem;
-  gap: 2rem;
+  /* gap: 2rem; */
   align-items: center;
 }
 .cardContDiv > h4 {

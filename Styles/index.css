@@ -225,11 +225,31 @@ main {
   align-items: end;
   background-size: 100%;
 }
+#modalAddToCartBtn {
+  width: 10%;
+  margin: 3.5rem 2rem;
+  height: 2.8rem;
+  border-radius: 1rem;
+  border: none;
+  background-color: #3958ff;
+  color: white;
+  font-size: 1.3rem;
+}
+#modalAddToCartBtn:hover {
+  color: white;
+  background-color: #1638f7;
+}
 
 #accessoryCardCont > div:hover {
   overflow: hidden;
   background-size: 120%;
   transition: background-size 1s ease-in;
+}
+#blazer {
+  margin-top: 3rem;
+  background-image: url(/Trendify/Assets/suitsAndBlazerImg.avif);
+  height: 500px;
+  background-size: cover;
 }
 #trendingNowCardCont {
   display: grid;
@@ -238,7 +258,17 @@ main {
   padding: 2rem;
   grid-template-columns: repeat(4, 1fr);
 }
-
+#bannerDocker {
+  margin-top: 3rem;
+  background-image: url(/Trendify/Assets/banner1.2.avif);
+  height: 600px;
+  background-size: cover;
+}
+#banner5 {
+  background-image: url("https://n.nordstrommedia.com/id/9124cf9a-7133-4e76-85dc-d7052869884a.png?h=179&w=1608");
+  height: 200px;
+  background-size: cover;
+}
 /* product card */
 .cardModal {
   display: none;

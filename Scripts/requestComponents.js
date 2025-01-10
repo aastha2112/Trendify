@@ -10,7 +10,13 @@ export const getData = async (url) => {
   }
 };
 let closeModal = document.getElementById("closeModal");
-export const displayDataInCard = (arr, cont, displayAddCartBtn, quantity) => {
+export const displayDataInCard = (
+  arr,
+  cont,
+  displayAddCartBtn,
+  quantity,
+  removeBtnDisplay
+) => {
   arr.map((el) => {
     let card = document.createElement("div");
     card.classList.add("card");
@@ -147,7 +153,21 @@ export const displayDataInCard = (arr, cont, displayAddCartBtn, quantity) => {
         }
       }
     });
+    let removeBtn = document.createElement("button");
+    removeBtn.style.display = removeBtnDisplay ? "flex" : "none";
+    removeBtn.classList.add("fa-solid", "fa-trash-can", "removeBtn");
+    removeBtn.addEventListener("click", async () => {
+      // console.log(el);
+      let userLoginInfo = JSON.parse(localStorage.getItem("userLoginTrendify"));
 
+      const users = await getData(`${userUrl}`).then((user) => user);
+      let user = users.filter((user) => user.email == userLoginInfo.email);
+      // console.log(user);
+
+      await removeFromCart(user[0].id, el.id);
+    });
+
+    // modal
     productImg.addEventListener("click", () => openModal(el));
 
     closeModal.addEventListener("click", () => {
@@ -162,12 +182,28 @@ export const displayDataInCard = (arr, cont, displayAddCartBtn, quantity) => {
     quantityCounterDiv.append(decrement, quantityCount, increment);
     quantityCounterDiv.style.display = quantity ? "flex" : "none";
 
-    cardContDiv.append(productPrice, discount, quantityCounterDiv);
+    cardContDiv.append(productPrice, discount, quantityCounterDiv, removeBtn);
     card.append(productImg, nameAndWishlistDiv, cardContDiv, addTocartBtn);
 
     cont.append(card);
   });
 };
+
+async function removeFromCart(userId, productId) {
+  try {
+    console.log(userId);
+    console.log(productId);
+
+    const response = await fetch(`${userUrl}/${userId}`);
+    const user = await response.json();
+    const updatedCart = user.cart.filter((item) => item.id !== productId);
+    await patchData(`${userUrl}/${userId}`, { ...user, cart: updatedCart });
+    window.location.reload();
+  } catch (error) {
+    console.log("remove btn error", error);
+  }
+}
+
 //card modal
 
 function openModal(obj) {
@@ -182,6 +218,7 @@ function openModal(obj) {
   <p>Category: ${obj.category}</p>
   <p>Rating: ${obj.rating}</p>
   <p>Stock: ${obj.stock}</p>
+  <button id="modalAddToCartBtn">Add to Cart</button>
 `;
   productModal.style.display = "block";
 }

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment</title>
+    <link rel="stylesheet" href="./Styles/payment.css" />
+    <link rel="stylesheet" href="./Styles/nav.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./Styles/footer.css" />
+  </head>
+  <body>
+    <header>
+      <div class="navBar"></div>
+      <div id="searchModal" class="searchModal">
+        <div class="modal-content">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+          />
+          <ul id="searchResults"></ul>
+        </div>
+      </div>
+    </header>
+    <div id="container">
+      <div id="bankDetail">
+        <!-- payment card details -->
+        <h2>SELECT PAYMENT METHOD</h2>
+        <div id="paymentTypeCont">
+          <div
+            class="paymentMethod"
+            style="background-color: #3399d9; border: none; color: white"
+          >
+            <i class="fa-solid fa-credit-card"></i>
+            <h3 style="color: white">Credit Card</h3>
+          </div>
+          <div class="paymentMethod">
+            <i class="fa-brands fa-paypal"></i>
+            <h3>Bank Transfer</h3>
+          </div>
+          <div class="paymentMethod">
+            <i class="fa-brands fa-google-pay" style="font-size: 2rem"></i>
+            <h3>UPI</h3>
+          </div>
+        </div>
+        <h3>NAME ON CARD</h3>
+        <input id="cardHoldername" type="text" placeholder="Card Holder Name" />
+        <h3>CARD NUMBER</h3>
+        <input id="cardNum" type="number" placeholder="0000-0000-0000-0000" />
+        <div id="cardDetail">
+          <div>
+            <h3>MONTH</h3>
+            <select id="month">
+              <option value="noMonth">Select Month</option>
+              <option value="">January</option>
+              <option value="">February</option>
+              <option value="">March</option>
+              <option value="">April</option>
+              <option value="">May</option>
+              <option value="">June</option>
+              <option value="">July</option>
+              <option value="">August</option>
+              <option value="">September</option>
+              <option value="">October</option>
+              <option value="">November</option>
+              <option value="">December</option>
+            </select>
+          </div>
+          <div>
+            <h3>YEAR</h3>
+            <select id="year">
+              <option value="noYear">Select Year</option>
+              <option value="">2024</option>
+              <option value="">2025</option>
+              <option value="">2026</option>
+              <option value="">2027</option>
+              <option value="">2028</option>
+              <option value="">2029</option>
+              <option value="">2030</option>
+            </select>
+          </div>
+          <div>
+            <h3>CVV</h3>
+            <input id="cvv" type="password" />
+          </div>
+        </div>
+      </div>
+      <div>
+        <!-- order summary and proceed button -->
+
+        <div id="orderSummaryCont">
+          <h2>ORDER SUMMARY</h2>
+
+          <h4 style="color: gray; margin: 0 0 1.5rem">
+            Download Invoice <i class="fa-solid fa-download"></i>
+          </h4>
+          <div id="orderSummary"></div>
+          <div class="orderDetail">
+            <h3>Tax :</h3>
+            <h3>$10</h3>
+          </div>
+          <div id="totalAmount">
+            <h3>Total Amount =</h3>
+            <h3 id="totalPayableAmount"></h3>
+          </div>
+        </div>
+        <button id="payBtn">Pay Now</button>
+      </div>
+    </div>
+    <footer id="footer"></footer>
+  </body>
+  <script src="./Scripts/payment.js" type="module"></script>
+  <script src="./Scripts/nav.js" type="module"></script>
+  <script src="./Scripts/footer.js"></script>
+</html>
